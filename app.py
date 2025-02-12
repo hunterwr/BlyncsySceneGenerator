@@ -51,13 +51,15 @@ def main():
             "Weather Conditions": weather,
         }
 
-    # Convert dictionary to JSON string
-    json_data = json.dumps(data, indent=4)
 
-    # Display JSON output
-    st.write("### Generated JSON Configuration:")
-    st.code(json_data, language="json")
+        # Convert dictionary to JSON string
+        json_data = json.dumps(data, indent=4)
 
+        # Display JSON output
+        st.write("### Generated JSON Configuration:")
+        st.code(json_data, language="json")
+
+    
 
     
 
