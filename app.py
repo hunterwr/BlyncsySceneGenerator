@@ -1,6 +1,9 @@
 import streamlit as st
 
 def main():
+    st.title("Automated Scene Generation")
+    st.subheader("Select what you would like in your scene, selecting multiple otpions will generate multiple scenes.")
+
     # Multi-select for road selection
     road = st.multiselect("Road Type:", ["Single-Lane", "Two-Lane", "Three-Lane", "Highway"])
 
