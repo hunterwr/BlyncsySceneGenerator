@@ -1,4 +1,5 @@
 import streamlit as st
+import json
 
 def main():
     st.title("Automated Scene Generation")
