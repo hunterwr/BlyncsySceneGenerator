@@ -34,18 +34,28 @@ def main():
     # Multi-select for weather conditions
     weather = st.multiselect("Weather:", ["Clear", "Overcast", "Rain", "Snow", "Fog", "Storm"])
 
-    # Display the selected options
-    st.write("### Selected Options:")
-    st.write("Road Type:", road)
-    st.write("Variations on Roads:", road_variations)
-    st.write("Number of Trees:", num_trees)
-    st.write("Environment:", environment)
-    st.write("Light Changes:", light_changes)
-    st.write("Camera Settings:", camera_settings)
-    st.write("Time of Day:", time_of_day)
-    st.write("Sign Type:", sign)
-    st.write("Sign Quality/Damage:", sign_quality)
-    st.write("Weather Conditions:", weather)
+    # Submit button
+    if st.button("Submit"):
+    # Create a dictionary with selected values
+        data = {
+            "Road Type": road,
+            "Variations on Roads": road_variations,
+            "Number of Trees": num_trees,
+            "Environment": environment,
+            "Light Changes": light_changes,
+            "Camera Position & Rotation": camera_settings,
+            "Time of Day": time_of_day,
+            "Sign Type": sign,
+            "Sign Quality/Damage": sign_quality,
+            "Weather Conditions": weather,
+        }
+
+    # Convert dictionary to JSON string
+    json_data = json.dumps(data, indent=4)
+
+    # Display JSON output
+    st.write("### Generated JSON Configuration:")
+    st.code(json_data, language="json")
 
 
     
